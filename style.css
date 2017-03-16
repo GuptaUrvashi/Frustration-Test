@@ -1,0 +1,21 @@
+.draggable{
+  cursor: move;
+}
+#content {
+    display: none;
+}
+#show:target #content {
+    display: inline-block;
+}
+#show:target #open {
+    display: none;
+}
+#contentone {
+    display: none;
+}
+#showone:target #contentone {
+    display: inline-block;
+}
+#showone:target #openone {
+    display: none;
+}

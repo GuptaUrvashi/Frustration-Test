@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <![endif]-->
+  <script src="snap.svg.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+  <div style = "float: left; width: 50%; text-align: center;">
+    <div id="show">
+      <a href="#show" id="open" class="btn btn-default btn-lg" style = "margin-top: 250px;">Do Tracing</a>
+    <div id="content" style = "margin-top: 150px;">
+      <svg id="svg" width="500" height="300" xmlns="http://www.w3.org/2000/svg" version="1.1"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+
+      <path  d="
+      M 134.000 184.000
+      L 192.779 214.902
+      L 181.553 149.451
+      L 229.106 103.098
+      L 163.389 93.549
+      L 134.000 34.000
+      L 104.611 93.549
+      L 38.894 103.098
+      L 86.447 149.451
+      L 75.221 214.902
+      L 136.000 184.000
+  " fill="transparent" stroke="black" stroke-width = "5" id="theMotionPath"/>
+      <circle cx  ="134.000" cy="34.000" r= "2" fill="black" class ="droptarget">
+      </circle>
+       <circle cx="" cy="" r="4" fill="red" class="draggable" id="dragtarget" onmousedown="selectElement(evt)">
+          <animateMotion>
+            <mpath xlink:href="#theMotionPath"/>
+          </animateMotion>
+       </circle>
+     </svg>
+     <!--<p id = "demo"></p>-->
+  </div>
+  </div>
+</div>
+  <div style = "float:right; width: 50%">
+    <div id="showone">
+      <a href="#showone" id="openone" class="btn btn-default btn-lg" style = "margin-top: 250px;">Play Games</a>
+    <div id="contentone" style = "margin-top: 150px;">
+      <iframe id="myIframe" target= "_parent" src="" frameborder="0" marginwidth="0" marginheight="0" width="500" height="400"></iframe>
+      <form id="form1" method="post">
+         <label> Select an activity: <select id="location" onchange="setIframeSource()">
+            <option value="http://codeincomplete.com/games/tetris/">Tetris</option>
+            <option value="https://www.youtube.com/embed/LLoDAKWWs9U">Vine Beatboxing</option>
+         </select></label>
+      </form>
+    <script>
+    function setIframeSource() {
+       var theSelect = document.getElementById('location');
+       var theIframe = document.getElementById('myIframe');
+       var theUrl;
+
+       theUrl = theSelect.options[theSelect.selectedIndex].value;
+       theIframe.src = theUrl;
+    }
+
+    </script>
+    </div>
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+<script>
+var svg = Snap('#svg');
+var circle = svg.circle('134', '34', '4').attr('fill', 'orange');
+var move = function(dx,dy) {
+        this.attr({
+                    transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+                });
+}
+
+var start = function() {
+        this.data('origTransform', this.transform().local );
+}
+var stop = function() {
+        console.log('finished dragging');
+}
+
+circle.drag(move, start, stop );
+</script>
+
+
+<!--document.getElementById("dragtarget").addEventListener("mousedown", displayDate, false); -->
+</body>
+</html>
