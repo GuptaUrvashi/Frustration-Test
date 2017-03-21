@@ -19,8 +19,8 @@ function mouseOver(){
 
 var move = function(dx,dy) {
 			this.attr({
-									transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
-							});
+			transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+				});
 }
 var start = function() {
         this.data('origTransform', this.transform().local );
