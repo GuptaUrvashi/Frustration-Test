@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -16,45 +16,45 @@
 	<link rel ="stylesheet" href="style.css">
 </head>
 <body>
-	<div class = "container">
-		<div class = "row text-center">
-				<div class = "col-xs-6">
-			    <div id="show">
-			      <a href="#show" id="open" class="btn btn-default btn-lg" style = "margin-top: 350px;">Do Tracing</a>
-					    <div id="content" style = "margin-top: 200px;">
-					      <svg id="svg" width="400" height="400" xmlns="http://www.w3.org/2000/svg" version="1.1"
-					      xmlns:xlink="http://www.w3.org/1999/xlink">
-							      <path  d="
-										M 200.000 40.000
-										L 247.023 135.279
-										L 352.169 150.557
-										L 276.085 224.721
-										L 294.046 329.443
-							      L 200.000 280.000
-							    	L 105.954 329.443
-							    	L 123.915 224.721
-							      L 47.831 150.557
-										L 152.977 135.279
-							  " fill="transparent" stroke="black" stroke-width = "5" id="theMotionPath"/>
+<div class = "container">
+	<div class = "row text-center">
+		<div class = "col-xs-6">
+		    <div id="show">
+		      <a href="#show" id="open" class="btn btn-default btn-lg" style = "margin-top: 350px;">Do Tracing</a>
+				    <div id="content" style = "margin-top: 200px;">
+				      <svg id="svg" width="400" height="400" xmlns="http://www.w3.org/2000/svg" version="1.1"
+				      xmlns:xlink="http://www.w3.org/1999/xlink">
+						      <path  d="
+								M 200.000 40.000
+								L 247.023 135.279
+								L 352.169 150.557
+								L 276.085 224.721
+								L 294.046 329.443
+								L 200.000 280.000
+								L 105.954 329.443
+								L 123.915 224.721
+								L 47.831 150.557
+								L 152.977 135.279
+						  " fill="transparent" stroke="black" stroke-width = "5" id="theMotionPath"/>
 
-							      <circle cx  ="200.000" cy="40.000" r= "2" fill="black"> </circle>
-					     </svg>
-			  	 	</div>
-	  		</div>
-			</div>
+						      <circle cx  ="200.000" cy="40.000" r= "2" fill="black"> </circle>
+				     </svg>
+				   </div>
+		         </div>
+		    </div>
 
-		  <div class= "col-xs-6 text-center">
-		    <div id="showone">
-		      <a href="#showone" id="openone" class="btn btn-default btn-lg" style = "margin-top: 350px;">Play Games</a>
-				    <div id="contentone" style = "margin-top: 150px;">
-				      <iframe id="myIframe" target= "_parent" src="" frameborder="0" marginwidth="0" marginheight="0" width="500" height="400"></iframe>
-				      <form id="form1" method="post">
-				         <label> Select an activity: <select id="location" onchange="setIframeSource()">
-				            <option value="http://codeincomplete.com/games/tetris/">Tetris</option>
-				            <option value="https://www.youtube.com/embed/LLoDAKWWs9U">Vine Beatboxing</option>
-				         </select></label>
-				      </form>
-				    </div>
+	  <div class= "col-xs-6 text-center">
+	    <div id="showone">
+	      <a href="#showone" id="openone" class="btn btn-default btn-lg" style = "margin-top: 350px;">Play Games</a>
+			    <div id="contentone" style = "margin-top: 150px;">
+			      <iframe id="myIframe" target= "_parent" src="" frameborder="0" marginwidth="0" marginheight="0" width="500" height="400"></iframe>
+			      <form id="form1" method="post">
+				 <label> Select an activity: <select id="location" onchange="setIframeSource()">
+				    <option value="http://codeincomplete.com/games/tetris/">Tetris</option>
+				    <option value="https://www.youtube.com/embed/LLoDAKWWs9U">Vine Beatboxing</option>
+				 </select></label>
+			      </form>
+			    </div>
 		    </div>
 		  </div>
 		</div>
